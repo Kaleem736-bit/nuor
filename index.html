@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دفتر رسائل نور</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <img src="1747843273888.jpg" alt="صورة الغلاف" class="cover-image" />
+    <h1>دفتر رسائل نور عماد حنتولي</h1>
+    <p>اكتبي لي رسالة جميلة أو ذكرى تبقَى!</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <input type="text" id="name" placeholder="اسمك" />
+      <textarea id="message" placeholder="اكتبي رسالتك هنا..."></textarea>
+      <button onclick="addMessage()">أرسل الرسالة</button>
+    </section>
+
+    <section id="messages">
+      <h2>الرسائل</h2>
+      <div id="messages-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 نور عماد حنتولي
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
