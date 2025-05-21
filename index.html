@@ -4,31 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>دفتر رسائل نور</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <img src="1747843273888.jpg" alt="صورة الغلاف" class="cover-image" />
-    <h1>دفتر رسائل نور عماد حنتولي</h1>
-    <p>اكتبي لي رسالة جميلة أو ذكرى تبقَى!</p>
+    <img src="1747843273888.jpg" alt="دفتر رسائل نور" class="cover-image" />
+    <div class="header-content">
+      <h1>دفتر رسائل نور</h1>
+      <p class="subtitle">رسائل حب وذكريات جميلة من أحبائي</p>
+    </div>
+    <div class="theme-switcher">
+      <button id="theme-btn"><i class="fas fa-moon"></i></button>
+    </div>
   </header>
 
   <main>
-    <section class="form-section">
-      <input type="text" id="name" placeholder="اسمك" />
-      <textarea id="message" placeholder="اكتبي رسالتك هنا..."></textarea>
-      <button onclick="addMessage()">أرسل الرسالة</button>
+    <section class="friend-section card">
+      <h2><i class="fas fa-heart"></i> صديقاتي العزيزات</h2>
+      <div id="friends-list" class="friends-grid"></div>
+      
+      <div class="friend-actions">
+        <button class="btn-primary" onclick="showAddFriendForm()">
+          <i class="fas fa-user-plus"></i> إضافة صديقة جديدة
+        </button>
+      </div>
+      
+      <div id="add-friend-form" class="form-popup">
+        <h3><i class="fas fa-user-edit"></i> إضافة صديقة جديدة</h3>
+        <input type="text" id="new-friend-name" placeholder="اسم الصديقة الجديدة" class="form-input" />
+        <div class="form-buttons">
+          <button class="btn-success" onclick="addNewFriend()">
+            <i class="fas fa-check"></i> حفظ
+          </button>
+          <button class="btn-cancel" onclick="hideAddFriendForm()">
+            <i class="fas fa-times"></i> إلغاء
+          </button>
+        </div>
+      </div>
     </section>
 
-    <section id="messages">
-      <h2>الرسائل</h2>
-      <div id="messages-container"></div>
+    <section class="message-section card" id="message-section">
+      <div class="section-header">
+        <h2 id="current-friend-title"><i class="fas fa-envelope"></i> رسائل لـ: <span id="selected-friend-name"></span></h2>
+        <button class="btn-back" onclick="deselectFriend()" id="back-btn">
+          <i class="fas fa-arrow-left"></i> العودة
+        </button>
+      </div>
+      
+      <div class="form-section" id="message-form">
+        <textarea id="message" placeholder="اكتبي رسالة حب أو ذكرى جميلة..." class="form-textarea"></textarea>
+        <button class="btn-send" onclick="addMessage()">
+          <i class="fas fa-paper-plane"></i> إرسال الرسالة
+        </button>
+      </div>
+
+      <div id="messages-container" class="messages-container"></div>
     </section>
+
+    <div class="floating-btn" id="scroll-top-btn" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 نور عماد حنتولي
+    <div class="footer-content">
+      <p>صنع بكل الحب بواسطة نور © 2025</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-snapchat"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
